@@ -1,0 +1,34 @@
+﻿@using Bober.Models.DatabaseModels
+@model IEnumerable<Zastr>
+
+@{
+    ViewData["Title"] = "Застройщики";
+}
+
+<h2 class="text-center text-info">Застройщики</h2>
+<table class="table table-hover w-100 pt-3">
+    <thead>
+        <tr class="table-dark text-info">
+            <th>ID</th>
+            <th>Название</th>
+            <th>Статус</th>
+            <th><a asp-controller="Zastr" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var zastr in Model)
+        {
+            <tr>
+                <td class="text-info">@zastr.Id</td>
+                <td>@zastr.Name</td>
+                <td>@zastr.Status</td>
+                <td>
+                    <div class="w-100 btn-group" role="group">
+                        <a asp-controller="Zastr" asp-action="Edit" asp-route-id="@zastr.Id" class="btn btn-outline-warning mx-2">Изменить</a>
+                        <a asp-controller="Zastr" asp-action="Delete" asp-route-id="@zastr.Id" class="btn btn-outline-danger mx-2">Удалить</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

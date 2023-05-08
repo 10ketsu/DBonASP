@@ -1,0 +1,48 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Client
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Изменение данных клиента</h2>
+            <hr class="border-info"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Passport"></label>
+            <input asp-for="Passport" class="form-control" />
+            <span asp-validation-for="Passport" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateBorn"></label>
+            <input asp-for="DateBorn" type="date" class="form-control" />
+            <span asp-validation-for="DateBorn" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sex"></label>
+            <input asp-for="Sex" class="form-control" />
+            <span asp-validation-for="Sex" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-info w-100">Принять изменения</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Client" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+                <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
