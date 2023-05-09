@@ -1,0 +1,38 @@
+﻿@using Bober.Models.DatabaseModels
+@model IEnumerable<Building>
+
+@{
+    ViewData["Title"] = "Здания";
+}
+
+<h2 class="text-center text-info">Здания</h2>
+<table class="table table-hover w-100 pt-3">
+    <thead>
+        <tr class="table-dark text-info">
+            <th>ID</th>
+            <th>Название</th>
+            <th>Кол-во этажей</th>
+            <th>Статус</th>
+            <th>Дополнения</th>
+            <th><a asp-controller="Building" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var building in Model)
+        {
+            <tr>
+                <td class="text-info">@building.Id</td>
+                <td>@building.Name</td>
+                <td>@building.FlorNumber</td>
+                <td>@building.Status</td>
+                <td>@building.Bonus</td>
+                <td>
+                    <div class="w-100 btn-group" role="group">
+                        <a asp-controller="Building" asp-action="Edit" asp-route-id="@building.Id" class="btn btn-outline-warning mx-2">Изменить</a>
+                        <a asp-controller="Building" asp-action="Delete" asp-route-id="@building.Id" class="btn btn-outline-danger mx-2">Удалить</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

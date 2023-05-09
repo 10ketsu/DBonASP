@@ -1,0 +1,48 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Building
+@{
+    ViewData["Title"] = "Add";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Новое здание</h2>
+            <hr class="border-info" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="FlorNumber"></label>
+            <input asp-for="FlorNumber" class="form-control" />
+            <span asp-validation-for="FlorNumber" class="text-danger"></span>
+        </div>        
+        <div class="mb-3">
+            <label asp-for="Status"></label>
+            <input asp-for="Status" class="form-control" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Bonus"></label>
+            <input asp-for="Bonus" class="form-control" />
+            <span asp-validation-for="Bonus" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-info w-100">Создать</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Building" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

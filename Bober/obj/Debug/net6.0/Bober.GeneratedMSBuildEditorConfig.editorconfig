@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Bogdan\source\repos\Bober\Bober
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Bogdan/source/repos/Bober/Bober/Views/Client/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -66,6 +82,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Bogdan/source/repos/Bober/Bober/Views/Zastr/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFzdHJcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Zastr/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFzdHJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bogdan/source/repos/Bober/Bober/Views/Zastr/Edit.cshtml]
