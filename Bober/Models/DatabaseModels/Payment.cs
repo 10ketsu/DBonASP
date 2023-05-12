@@ -7,7 +7,7 @@ namespace Bober.Models.DatabaseModels
     public class Payment
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [DisplayName("дата платежа")]
         [Required(ErrorMessage = "Введите дату платежа")]
@@ -29,10 +29,13 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите дату платежа")]
         public DateTime BillDate { get; set; }
 
+        //[DisplayName("номер платежа")]
+        //[Required(ErrorMessage = "Введите номер платежа")]
+        //public string Bill { get; set; }
+
         [DisplayName("номер платежа")]
         [Required(ErrorMessage = "Введите номер платежа")]
         public int BillID { get; set; }
-
         [ForeignKey("BillID")]
         public Bill Bill { get; set; }
     }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Bober.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace Bober.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Passport = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    DateBorn = table.Column<DateTime>(type: "datetime2", maxLength: 6, nullable: false),
+                    DateBorn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Sex = table.Column<string>(type: "nvarchar(1)", maxLength: 1, nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false)
                 },
@@ -31,31 +31,30 @@ namespace Bober.Migrations
                 name: "District",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_District", x => x.ID);
+                    table.PrimaryKey("PK_District", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Sotrudnik",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fio = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Pol = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
-                    OtdelID = table.Column<int>(type: "int", nullable: false),
                     OtdelName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sotrudnik", x => x.ID);
+                    table.PrimaryKey("PK_Sotrudnik", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -65,8 +64,7 @@ namespace Bober.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BuildingID = table.Column<int>(type: "int", nullable: false)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -83,12 +81,18 @@ namespace Bober.Migrations
                     FlorNumber = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Bonus = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DistrictID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DistrictID = table.Column<int>(type: "int", nullable: false),
                     ZastrID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Building", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Building_District_DistrictID",
+                        column: x => x.DistrictID,
+                        principalTable: "District",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Building_Zastr_ZastrID",
                         column: x => x.ZastrID,
@@ -101,8 +105,9 @@ namespace Bober.Migrations
                 name: "Flat",
                 columns: table => new
                 {
-                    FlatNumber = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    FlatNumber = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RoomNumber = table.Column<int>(type: "int", nullable: false),
                     Sqyare = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -111,7 +116,7 @@ namespace Bober.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Flat", x => x.FlatNumber);
+                    table.PrimaryKey("PK_Flat", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Flat_Building_BuildingID",
                         column: x => x.BuildingID,
@@ -124,7 +129,7 @@ namespace Bober.Migrations
                 name: "Dogovor",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DateStart = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateFinish = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -135,7 +140,7 @@ namespace Bober.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Dogovor", x => x.ID);
+                    table.PrimaryKey("PK_Dogovor", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Dogovor_Client_ClientID",
                         column: x => x.ClientID,
@@ -146,13 +151,13 @@ namespace Bober.Migrations
                         name: "FK_Dogovor_Flat_FlatID",
                         column: x => x.FlatID,
                         principalTable: "Flat",
-                        principalColumn: "FlatNumber",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Dogovor_Sotrudnik_SotrID",
                         column: x => x.SotrID,
                         principalTable: "Sotrudnik",
-                        principalColumn: "ID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -160,7 +165,7 @@ namespace Bober.Migrations
                 name: "Bill",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DateFinish = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Summ = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -169,12 +174,12 @@ namespace Bober.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bill", x => x.ID);
+                    table.PrimaryKey("PK_Bill", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Bill_Dogovor_DogovorID",
                         column: x => x.DogovorID,
                         principalTable: "Dogovor",
-                        principalColumn: "ID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -182,7 +187,7 @@ namespace Bober.Migrations
                 name: "Payment",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PaymentSumm = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -193,12 +198,12 @@ namespace Bober.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Payment", x => x.ID);
+                    table.PrimaryKey("PK_Payment", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Payment_Bill_BillID",
                         column: x => x.BillID,
                         principalTable: "Bill",
-                        principalColumn: "ID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -206,6 +211,11 @@ namespace Bober.Migrations
                 name: "IX_Bill_DogovorID",
                 table: "Bill",
                 column: "DogovorID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Building_DistrictID",
+                table: "Building",
+                column: "DistrictID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Building_ZastrID",
@@ -242,9 +252,6 @@ namespace Bober.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "District");
-
-            migrationBuilder.DropTable(
                 name: "Payment");
 
             migrationBuilder.DropTable(
@@ -264,6 +271,9 @@ namespace Bober.Migrations
 
             migrationBuilder.DropTable(
                 name: "Building");
+
+            migrationBuilder.DropTable(
+                name: "District");
 
             migrationBuilder.DropTable(
                 name: "Zastr");

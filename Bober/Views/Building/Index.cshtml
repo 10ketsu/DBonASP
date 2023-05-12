@@ -9,11 +9,13 @@
 <table class="table table-hover w-100 pt-3">
     <thead>
         <tr class="table-dark text-info">
-            <th>Id</th>
+            <th>ID</th>
             <th>Название</th>
             <th>Кол-во этажей</th>
             <th>Статус</th>
             <th>Дополнения</th>
+            <th>Застройщик</th>
+            <th>Район</th>
             <th><a asp-controller="Building" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
         </tr>
     </thead>
@@ -26,6 +28,8 @@
                 <td>@building.FlorNumber</td>
                 <td>@building.Status</td>
                 <td>@building.Bonus</td>
+                <td>@building.ZastrID</td>
+                <td>@building.DistrictID</td>
                 <td>
                     <div class="w-100 btn-group" role="group">
                         <a asp-controller="Building" asp-action="Edit" asp-route-id="@building.Id" class="btn btn-outline-warning mx-2">Изменить</a>

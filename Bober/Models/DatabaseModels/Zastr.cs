@@ -13,13 +13,11 @@ namespace Bober.Models.DatabaseModels
         [StringLength(25, ErrorMessage = "Длинна не может быть более {1} символов")]
         public string Name { get; set; }
 
-        [DisplayName("статус")]
+        [DisplayName("Специализация")]
         [Required(ErrorMessage = "Введите статус")]
         public string Status { get; set; }
 
-        [DisplayName("номер здания")]
-        [Required(ErrorMessage = "Введите номер здания")]
-        public int BuildingID { get; set; }
+        //public List<Building> Buildings { get; set; }
     }
 }
 

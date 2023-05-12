@@ -7,6 +7,8 @@ namespace Bober.Models.DatabaseModels
     public class Flat
     {
         [Key]
+        public int Id { get; set; }
+
         [DisplayName("номер")]
         [Required(ErrorMessage = "Введите номер квартиры")]
         public int FlatNumber { get; set; }
@@ -27,11 +29,16 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите этаж")]
         public int Flor { get; set; }
 
+        //[DisplayName("здание")]
+        //[Required(ErrorMessage = "Введите название здания")]
+        //public string Building { get; set; }
+
         [DisplayName("здание")]
         [Required(ErrorMessage = "Введите название здания")]
         public int BuildingID { get; set; }
-
         [ForeignKey("BuildingID")]
         public Building Building { get; set; }
+
+        //public List<Dogovor> Dogovors { get; set; }
     }
 }

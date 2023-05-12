@@ -24,11 +24,11 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Bill", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateFinish")
                         .HasColumnType("datetime2");
@@ -42,11 +42,11 @@ namespace Bober.Migrations
                     b.Property<decimal>("Summ")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("DogovorID");
 
-                    b.ToTable("Bill");
+                    b.ToTable("Bill", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Building", b =>
@@ -61,9 +61,8 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DistrictID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DistrictID")
+                        .HasColumnType("int");
 
                     b.Property<int>("FlorNumber")
                         .HasColumnType("int");
@@ -81,9 +80,11 @@ namespace Bober.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DistrictID");
+
                     b.HasIndex("ZastrID");
 
-                    b.ToTable("Building");
+                    b.ToTable("Building", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Client", b =>
@@ -114,16 +115,16 @@ namespace Bober.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Client");
+                    b.ToTable("Client", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.District", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -133,18 +134,18 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
-                    b.ToTable("District");
+                    b.ToTable("District", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Dogovor", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("ClientID")
                         .HasMaxLength(10)
@@ -165,7 +166,7 @@ namespace Bober.Migrations
                     b.Property<int>("SotrID")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("ClientID");
 
@@ -173,18 +174,21 @@ namespace Bober.Migrations
 
                     b.HasIndex("SotrID");
 
-                    b.ToTable("Dogovor");
+                    b.ToTable("Dogovor", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Flat", b =>
                 {
-                    b.Property<int>("FlatNumber")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FlatNumber"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BuildingID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FlatNumber")
                         .HasColumnType("int");
 
                     b.Property<int>("Flor")
@@ -200,20 +204,20 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlatNumber");
+                    b.HasKey("Id");
 
                     b.HasIndex("BuildingID");
 
-                    b.ToTable("Flat");
+                    b.ToTable("Flat", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Payment", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("BillDate")
                         .HasColumnType("datetime2");
@@ -233,20 +237,20 @@ namespace Bober.Migrations
                     b.Property<decimal>("PaymentSumm")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("BillID");
 
-                    b.ToTable("Payment");
+                    b.ToTable("Payment", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Sotrudnik", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -254,9 +258,6 @@ namespace Bober.Migrations
                     b.Property<string>("Fio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OtdelID")
-                        .HasColumnType("int");
 
                     b.Property<string>("OtdelName")
                         .IsRequired()
@@ -266,9 +267,9 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
-                    b.ToTable("Sotrudnik");
+                    b.ToTable("Sotrudnik", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Zastr", b =>
@@ -278,9 +279,6 @@ namespace Bober.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BuildingID")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -293,7 +291,7 @@ namespace Bober.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Zastr");
+                    b.ToTable("Zastr", (string)null);
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Bill", b =>
@@ -309,11 +307,19 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Building", b =>
                 {
+                    b.HasOne("Bober.Models.DatabaseModels.District", "District")
+                        .WithMany()
+                        .HasForeignKey("DistrictID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Bober.Models.DatabaseModels.Zastr", "Zastr")
                         .WithMany()
                         .HasForeignKey("ZastrID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("District");
 
                     b.Navigation("Zastr");
                 });

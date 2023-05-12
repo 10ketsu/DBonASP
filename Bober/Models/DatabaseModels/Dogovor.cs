@@ -7,7 +7,7 @@ namespace Bober.Models.DatabaseModels
     public class Dogovor
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [DisplayName("дата")]
         [Required(ErrorMessage = "Введите дату договора")]
@@ -21,26 +21,39 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите цену")]
         public decimal Price { get; set; }
 
+        //[DisplayName("Сотрудник")]
+        //[Required(ErrorMessage = "Введите сотрудника")]
+        //public string Sotr { get; set; }
+
+        //[DisplayName("паспорт")]
+        //[Required(ErrorMessage = "Введите серию и номер")]
+        //[StringLength(10, ErrorMessage = "Длинна не может быть более {1} символов")]
+        //public string Client { get; set; }
+
+        //[DisplayName("Квартира")]
+        //[Required(ErrorMessage = "Введите номер квартиры")]
+        //public string Flat { get; set; }
+
         [DisplayName("Номер")]
         [Required(ErrorMessage = "Введите номер сотрудника")]
         public int SotrID { get; set; }
+        [ForeignKey("SotrID")]
+        public Sotrudnik Sotrudnik { get; set; }
 
         [DisplayName("паспорт")]
         [Required(ErrorMessage = "Введите серию и номер")]
         [StringLength(10, ErrorMessage = "Длинна не может быть более {1} символов")]
         public int ClientID { get; set; }
+        [ForeignKey("ClientID")]
+        public Client Client { get; set; }
+
 
         [DisplayName("номер")]
         [Required(ErrorMessage = "Введите номер квартиры")]
         public int FlatID { get; set; }
-
         [ForeignKey("FlatID")]
         public Flat Flat { get; set; }
 
-        [ForeignKey("ClientID")]
-        public District Client { get; set; }
-
-        [ForeignKey("SotrID")]
-        public Sotrudnik Sotrudnik { get; set; }
+        //public List<Bill> Bills { get; set; } 
     }
 }

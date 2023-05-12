@@ -6,7 +6,7 @@ namespace Bober.Models.DatabaseModels
     public class District
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [DisplayName("Район")]
         [Required(ErrorMessage = "Введите район")]
@@ -15,5 +15,7 @@ namespace Bober.Models.DatabaseModels
         [DisplayName("местоположение")]
         [Required(ErrorMessage = "Введите местоположение")]
         public string Location { get; set; }
+
+        //public List<Building> Buildings { get; set; }
     }
 }

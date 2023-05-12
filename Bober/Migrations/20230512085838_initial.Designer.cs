@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bober.Migrations
 {
     [DbContext(typeof(BogbanContext))]
-    [Migration("20230507202634_CharToStringMigration")]
-    partial class CharToStringMigration
+    [Migration("20230512085838_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,11 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Bill", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateFinish")
                         .HasColumnType("datetime2");
@@ -45,7 +45,7 @@ namespace Bober.Migrations
                     b.Property<decimal>("Summ")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("DogovorID");
 
@@ -64,9 +64,8 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DistrictID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DistrictID")
+                        .HasColumnType("int");
 
                     b.Property<int>("FlorNumber")
                         .HasColumnType("int");
@@ -83,6 +82,8 @@ namespace Bober.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DistrictID");
 
                     b.HasIndex("ZastrID");
 
@@ -122,11 +123,11 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.District", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -136,18 +137,18 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("District");
                 });
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Dogovor", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("ClientID")
                         .HasMaxLength(10)
@@ -168,7 +169,7 @@ namespace Bober.Migrations
                     b.Property<int>("SotrID")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("ClientID");
 
@@ -181,13 +182,16 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Flat", b =>
                 {
-                    b.Property<int>("FlatNumber")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FlatNumber"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BuildingID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FlatNumber")
                         .HasColumnType("int");
 
                     b.Property<int>("Flor")
@@ -203,7 +207,7 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlatNumber");
+                    b.HasKey("Id");
 
                     b.HasIndex("BuildingID");
 
@@ -212,11 +216,11 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Payment", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("BillDate")
                         .HasColumnType("datetime2");
@@ -236,7 +240,7 @@ namespace Bober.Migrations
                     b.Property<decimal>("PaymentSumm")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("BillID");
 
@@ -245,11 +249,11 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Sotrudnik", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -257,9 +261,6 @@ namespace Bober.Migrations
                     b.Property<string>("Fio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OtdelID")
-                        .HasColumnType("int");
 
                     b.Property<string>("OtdelName")
                         .IsRequired()
@@ -269,7 +270,7 @@ namespace Bober.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Sotrudnik");
                 });
@@ -281,9 +282,6 @@ namespace Bober.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BuildingID")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -312,11 +310,19 @@ namespace Bober.Migrations
 
             modelBuilder.Entity("Bober.Models.DatabaseModels.Building", b =>
                 {
+                    b.HasOne("Bober.Models.DatabaseModels.District", "District")
+                        .WithMany()
+                        .HasForeignKey("DistrictID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Bober.Models.DatabaseModels.Zastr", "Zastr")
                         .WithMany()
                         .HasForeignKey("ZastrID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("District");
 
                     b.Navigation("Zastr");
                 });

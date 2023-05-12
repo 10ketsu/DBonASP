@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Bober.Models.DatabaseModels
 {
@@ -9,15 +10,15 @@ namespace Bober.Models.DatabaseModels
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("название")]
+        [DisplayName("Название")]
         [Required(ErrorMessage = "Введите название здания")]
         public string Name { get; set; }
 
-        [DisplayName("этаж")]
+        [DisplayName("Этаж")]
         [Required(ErrorMessage = "Введите кол-во этажей")]
         public int FlorNumber { get; set; }
 
-        [DisplayName("статус")]
+        [DisplayName("Статус")]
         [Required(ErrorMessage = "Введите статус")]
         public string Status { get; set; }
 
@@ -25,15 +26,27 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите допки")]
         public string Bonus { get; set; }
 
-        [DisplayName("район")]
-        [Required(ErrorMessage = "Введите район")]
-        public string DistrictID { get; set; }
+        //[DisplayName("Район")]
+        //[Required(ErrorMessage = "Введите район")]
+        //public string District { get; set; }
 
-        [DisplayName("застрройщик")]
+        //[DisplayName("Застройщик")]
+        //[Required(ErrorMessage = "Введите застройщика")]
+        //public string Zastr { get; set; }
+
+        [ForeignKey("District")]
+        [DisplayName("Район")]
+        [Required(ErrorMessage = "Введите район")]
+        public int DistrictID { get; set; }
+        public District District { get; set; }
+
+
+        [ForeignKey("Zastr")]
+        [DisplayName("Застройщик")]
         [Required(ErrorMessage = "Введите застройщика")]
         public int ZastrID { get; set; }
-        [ForeignKey("ZastrID")]
-
         public Zastr Zastr { get; set; }
+
+        //public List<Flat> Flats { get; set; }
     }
 }

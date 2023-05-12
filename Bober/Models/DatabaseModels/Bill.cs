@@ -7,7 +7,7 @@ namespace Bober.Models.DatabaseModels
     public class Bill
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [DisplayName("дата")]
         [Required(ErrorMessage = "Введите дату окончания")]
@@ -21,11 +21,16 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите дату заключения")]
         public DateTime DateStart { get; set; }
 
+        //[DisplayName("договор")]
+        //[Required(ErrorMessage = "Введите номер договора")]
+        //public string Dogovor { get; set; }
+
         [DisplayName("договор")]
         [Required(ErrorMessage = "Введите номер договора")]
         public int DogovorID { get; set; }
         [ForeignKey("DogovorID")]
-
         public Dogovor Dogovor { get; set; }
+
+        //public List<Payment> Payments { get; set; }
     }
 }
