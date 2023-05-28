@@ -8,11 +8,37 @@ namespace Bober.Controllers
         public readonly BogbanContext _db;
         public ClientController(BogbanContext db) => _db = db;
 
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder, string searchString)
         {
-            List<Client> clientsList = _db.Client.ToList();
-            return View(clientsList);
+            ViewData["PassSortParm"] = String.IsNullOrEmpty(sortOrder) ? "peace_des" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            var client = _db.Client.AsQueryable();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                client = client.Where(a => a.Passport.Contains(searchString) || a.Sex.Contains(searchString) || a.Phone.Contains(searchString));
+            }
+
+
+            switch (sortOrder)
+            {
+                case "peace_des":
+                    client = client.OrderByDescending(a => a.Passport);
+                    break;
+                case "Date":
+                    client = client.OrderBy(s => s.DateBorn);
+                    break;
+                case "date_desc":
+                    client = client.OrderByDescending(s => s.DateBorn);
+                    break;
+                default:
+                    client = client.OrderBy(a => a.Passport);
+                    break;
+            }
+            return View(client.ToList());
         }
+
 
         public IActionResult Add()
         {

@@ -8,7 +8,7 @@ namespace Bober.Models.DatabaseModels
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("пassпорт")]
+        [DisplayName("пaсспорт")]
         [Required(ErrorMessage = "серия и номер")]
         [StringLength(10, ErrorMessage = "Длинна фамилии не может быть более {1} символов")]
         public string Passport { get; set; }
@@ -24,7 +24,7 @@ namespace Bober.Models.DatabaseModels
 
         [DisplayName("телефон")]
         [Required(ErrorMessage = "Введите номер телефона")]
-        [StringLength(11, ErrorMessage = "Длинна телефона не может быть более {1} символов")]
+        [StringLength(11, ErrorMessage = "Длинна номера не может быть более {1} символов")]
         public string Phone { get; set; }
 
         //public List<Dogovor> Dogovors { get; set; }

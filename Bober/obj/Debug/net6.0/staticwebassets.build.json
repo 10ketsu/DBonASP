@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pQCwtkN/j0Rgwvzssg/f3MANGQ08UowGDl6o0uX2PLY=",
+  "Hash": "2/YKBOfRc+oefifSaAt3QjT89aiN27RFFBzw+zrhgSE=",
   "Source": "Bober",
   "BasePath": "_content/Bober",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\wwwroot\\image\\cbb46cb7f380229367d7a0691875a9a5.jpeg",
+      "SourceId": "Bober",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\wwwroot\\",
+      "BasePath": "_content/Bober",
+      "RelativePath": "image/cbb46cb7f380229367d7a0691875a9a5.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\cbb46cb7f380229367d7a0691875a9a5.jpeg"
     },
     {
       "Identity": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\wwwroot\\js\\site.js",

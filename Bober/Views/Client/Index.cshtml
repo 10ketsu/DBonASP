@@ -10,10 +10,10 @@
     <thead>
         <tr class="table-dark text-info">
             <th>ID</th>
-            <th>Пасспорт</th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["PassSortParm"]" class="link link-primary page-link">Пасспорт</a></th>
             <th>Пол</th>
             <th>Телефон</th>
-            <th>ДР</th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" class="link link-primary page-link">Дата рождения</a></th>
             <th><a asp-controller="Client" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
         </tr>
     </thead>

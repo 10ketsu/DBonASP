@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/Bober.styles.css" asp-append-version="true" />
 </head>
 <body>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -34,7 +35,28 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Building" asp-action="Index">Здания</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Flat" asp-action="Index">Квартиры</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Payment" asp-action="Index">Платежи</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Bill" asp-action="Index">Счета</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Dogovor" asp-action="Index">Договоры</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Sotrudnik" asp-action="Index">Сотрудники</a>
+                        </li>
                     </ul>
+
+                    <form class="d-flex" asp-action="Index" method="get">
+                        <input name="SearchString" class="form-control me-sm-2" type="search" value="@ViewData["CurrentFilter"]" placeholder="Искать">
+                        <button type="submit" class="btn btn-secondary my-2 my-sm-0">search</button>
+                    </form>
+
                 </div>
             </div>
         </nav>
@@ -47,9 +69,9 @@
 
     <footer class="border-top footer text-muted bg-dark">
         <div class="container">
-            &copy; 2023 - Bober - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year - Bober - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer> 
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

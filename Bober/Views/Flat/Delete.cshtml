@@ -1,0 +1,46 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Flat
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Удалить здание</h2>
+            <hr class="border-info" />
+        </div>
+<div class="mb-3">
+            <label asp-for="FlatNumber"></label>
+            <input asp-for="FlatNumber" class="form-control" readonly/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Status"></label>
+            <input asp-for="Status" class="form-control" readonly/>
+        </div>        
+        <div class="mb-3">
+            <label asp-for="RoomNumber"></label>
+            <input asp-for="RoomNumber" class="form-control" readonly/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sqyare"></label>
+            <input asp-for="Sqyare" class="form-control" readonly/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flor"></label>
+            <input asp-for="Flor" class="form-control" readonly/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BuildingID"></label>
+            <input asp-for="BuildingID" class="form-control" readonly />
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-info w-100">Удалить</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Flat" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+        </div>
+    </div>
+</form>

@@ -30,6 +30,16 @@
             <input asp-for="Bonus" class="form-control" />
             <span asp-validation-for="Bonus" class="text-danger"></span>
         </div>
+         <div class="mb-3">
+            <label asp-for="ZastrID"></label>
+            <select asp-for="ZastrID" asp-items="ViewBag.ZastrList" class="form-select"></select>
+            <span asp-validation-for="ZastrID" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DistrictID"></label>
+            <select asp-for="DistrictID" asp-items="ViewBag.DistrictList" class="form-select"></select>
+            <span asp-validation-for="DistrictID" class="text-danger"></span>
+        </div>
         <div class="row">
             <div class="col">
                 <button type="submit" class="btn btn-info w-100">Принять изменения</button>

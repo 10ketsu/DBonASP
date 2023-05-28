@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\wwwroot\\image\\cbb46cb7f380229367d7a0691875a9a5.jpeg",
+      "PackagePath": "staticwebassets\\image\\cbb46cb7f380229367d7a0691875a9a5.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

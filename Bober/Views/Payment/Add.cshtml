@@ -1,0 +1,43 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Payment
+@{
+    ViewData["Title"] = "Add";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Новый платеж</h2>
+            <hr class="border-info" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="PaymentDate"></label>
+            <input asp-for="PaymentDate" class="form-control" />
+            <span asp-validation-for="PaymentDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PaymentSumm"></label>
+            <input asp-for="PaymentSumm" class="form-control" />
+            <span asp-validation-for="PaymentSumm" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BillID"></label>
+            <select asp-for="BillID" asp-items="ViewBag.BillList" class="form-select"></select>
+            <span asp-validation-for="BillID" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-info w-100">Создать</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Building" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

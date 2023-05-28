@@ -1,0 +1,58 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Flat
+@{
+    ViewData["Title"] = "Add";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Новая квартира</h2>
+            <hr class="border-info" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="FlatNumber"></label>
+            <input asp-for="FlatNumber" class="form-control" />
+            <span asp-validation-for="FlatNumber" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Status"></label>
+            <input asp-for="Status" class="form-control" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="RoomNumber"></label>
+            <input asp-for="RoomNumber" class="form-control" />
+            <span asp-validation-for="RoomNumber" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sqyare"></label>
+            <input asp-for="Sqyare" class="form-control" />
+            <span asp-validation-for="Sqyare" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flor"></label>
+            <input asp-for="Flor" class="form-control" />
+            <span asp-validation-for="Flor" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BuildingID"></label>
+            <select asp-for="BuildingID" asp-items="ViewBag.BuildingList" class="form-select"></select>
+            <span asp-validation-for="BuildingID" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-info w-100">Создать</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Flat" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

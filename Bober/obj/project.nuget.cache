@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zW3DUTvA3Srxj05+Tbinzhld+qme2I1I3T7Zoj8kUfFnE7rUhyB1tJVwzOacIg0IepsQDEFZf9VcSaLwA0osGg==",
+  "dgSpecHash": "H+a9Ox0MghZEsrddsarSGJopiO/F0DMk110VHXxrfCpcj4xOEwQjenZM+3bHGSZF7jbspSIrIQjcocregzf35A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\Bober.csproj",
+  "projectFilePath": "D:\\GitHub\\DBonASP\\Bober\\Bober.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bogdan\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Bogdan\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

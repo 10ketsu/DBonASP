@@ -10,8 +10,8 @@
     <thead>
         <tr class="table-dark text-info">
             <th>ID</th>
-            <th>Название</th>
-            <th>Специализация</th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" class="link link-primary page-link">Название</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["SpecSortParm"]" class="link link-primary page-link">Статус</a></th>
             <th><a asp-controller="Zastr" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
         </tr>
     </thead>

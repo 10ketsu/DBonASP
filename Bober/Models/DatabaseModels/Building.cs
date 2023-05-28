@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.CodeAnalysis;
 
 namespace Bober.Models.DatabaseModels
 {
@@ -26,18 +27,11 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите допки")]
         public string Bonus { get; set; }
 
-        //[DisplayName("Район")]
-        //[Required(ErrorMessage = "Введите район")]
-        //public string District { get; set; }
-
-        //[DisplayName("Застройщик")]
-        //[Required(ErrorMessage = "Введите застройщика")]
-        //public string Zastr { get; set; }
-
         [ForeignKey("District")]
         [DisplayName("Район")]
         [Required(ErrorMessage = "Введите район")]
         public int DistrictID { get; set; }
+        [ValidateNever]
         public District District { get; set; }
 
 
@@ -45,7 +39,13 @@ namespace Bober.Models.DatabaseModels
         [DisplayName("Застройщик")]
         [Required(ErrorMessage = "Введите застройщика")]
         public int ZastrID { get; set; }
+        [ValidateNever]
         public Zastr Zastr { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
 
         //public List<Flat> Flats { get; set; }
     }

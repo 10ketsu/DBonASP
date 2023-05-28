@@ -8,10 +8,34 @@ namespace Bober.Controllers
         public readonly BogbanContext _db;
         public ZastrController(BogbanContext db) => _db = db;
 
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder, string searchString)
         {
-            List<Zastr> zastrsList = _db.Zastr.ToList();
-            return View(zastrsList);
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["SpecSortParm"] = sortOrder == "Spec" ? "spec_desc" : "Spec";
+
+            var zastr = _db.Zastr.AsQueryable();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                zastr = zastr.Where(a => a.Name.Contains(searchString) || a.Status.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    zastr = zastr.OrderByDescending(a => a.Name);
+                    break;
+                case "Spec":
+                    zastr = zastr.OrderBy(s => s.Status).ThenBy(s => s.Id);
+                    break;
+                case "spec_desc":
+                    zastr = zastr.OrderByDescending(s => s.Status).ThenBy(s => s.Id);
+                    break;
+                default:
+                    zastr = zastr.OrderBy(a => a.Name);
+                    break;
+            }
+            return View(zastr.ToList());
         }
 
         public IActionResult Add()

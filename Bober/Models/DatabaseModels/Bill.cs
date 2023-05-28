@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Bober.Models.DatabaseModels
 {
@@ -9,28 +10,24 @@ namespace Bober.Models.DatabaseModels
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("дата")]
+        [DisplayName("Дата окончания")]
         [Required(ErrorMessage = "Введите дату окончания")]
         public DateTime DateFinish { get; set; }
 
-        [DisplayName("сумма")]
+        [DisplayName("Сумма")]
         [Required(ErrorMessage = "Введите сумму")]
         public decimal Summ { get; set; }
 
-        [DisplayName("дата")]
+        [DisplayName("Дата заключения")]
         [Required(ErrorMessage = "Введите дату заключения")]
         public DateTime DateStart { get; set; }
 
-        //[DisplayName("договор")]
-        //[Required(ErrorMessage = "Введите номер договора")]
-        //public string Dogovor { get; set; }
 
-        [DisplayName("договор")]
+        [DisplayName("Номер договора")]
         [Required(ErrorMessage = "Введите номер договора")]
         public int DogovorID { get; set; }
         [ForeignKey("DogovorID")]
+        [ValidateNever]
         public Dogovor Dogovor { get; set; }
-
-        //public List<Payment> Payments { get; set; }
     }
 }

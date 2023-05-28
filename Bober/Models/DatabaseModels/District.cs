@@ -16,6 +16,9 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите местоположение")]
         public string Location { get; set; }
 
-        //public List<Building> Buildings { get; set; }
+        public override string ToString()
+        {
+            return $"{Name} - {Location}";
+        }
     }
 }

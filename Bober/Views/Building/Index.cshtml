@@ -10,12 +10,12 @@
     <thead>
         <tr class="table-dark text-info">
             <th>ID</th>
-            <th>Название</th>
-            <th>Кол-во этажей</th>
-            <th>Статус</th>
-            <th>Дополнения</th>
-            <th>Застройщик</th>
-            <th>Район</th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" class="link link-primary page-link">Название</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["FlorSortParm"]" class="link link-primary page-link">Кол-во этажей</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSortParm"]" class="link link-primary page-link">Статус</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["BonusSortParm"]" class="link link-primary page-link">Дополнения</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["ZastrSortParm"]" class="link link-primary page-link">Застройщик</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DistrictSortParm"]" class="link link-primary page-link">Район</a></th>
             <th><a asp-controller="Building" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
         </tr>
     </thead>
@@ -28,8 +28,8 @@
                 <td>@building.FlorNumber</td>
                 <td>@building.Status</td>
                 <td>@building.Bonus</td>
-                <td>@building.ZastrID</td>
-                <td>@building.DistrictID</td>
+                <td>@building.Zastr</td>
+                <td>@building.District</td>
                 <td>
                     <div class="w-100 btn-group" role="group">
                         <a asp-controller="Building" asp-action="Edit" asp-route-id="@building.Id" class="btn btn-outline-warning mx-2">Изменить</a>

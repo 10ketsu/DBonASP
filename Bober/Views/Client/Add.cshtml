@@ -22,7 +22,11 @@
         </div>
         <div class="mb-3">
             <label asp-for="Sex"></label>
-            <input asp-for="Sex" class="form-control" />
+            <select asp-for="Sex" class="form-select">
+                <option disabled selected></option>
+                <option value="Ж">Женский</option>
+                <option value="М">Мужской</option>
+            </select>
             <span asp-validation-for="Sex" class="text-danger"></span>
         </div>
         <div class="mb-3">

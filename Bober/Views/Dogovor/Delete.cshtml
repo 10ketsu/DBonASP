@@ -1,0 +1,46 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Dogovor
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Удаление договора</h2>
+            <hr class="border-info"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateStart"></label>
+            <input asp-for="DateStart" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateFinish"></label>
+            <input asp-for="DateFinish" type="date" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="SotrID"></label>
+            <input asp-for="SotrID" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="ClientID"></label>
+            <input asp-for="ClientID" class="form-control" readonly />
+        </div>
+                <div class="mb-3">
+            <label asp-for="FlatID"></label>
+            <input asp-for="FlatID" class="form-control" readonly />
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-danger w-100">Удалить</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Dogovor" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+        </div>
+    </div>
+</form>

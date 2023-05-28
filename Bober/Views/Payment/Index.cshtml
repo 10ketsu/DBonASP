@@ -1,0 +1,36 @@
+﻿@using Bober.Models.DatabaseModels
+@model IEnumerable<Payment>
+
+@{
+    ViewData["Title"] = "Платежи";
+}
+
+<h2 class="text-center text-info">Платеж</h2>
+<table class="table table-hover w-100 pt-3">
+    <thead>
+        <tr class="table-dark text-info">
+            <th>Id</th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" class="link link-primary page-link">Дата платежа</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["SummSortParm"]" class="link link-primary page-link">Сумма платжеа</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["BillSortParm"]" class="link link-primary page-link">Номер счета</a></th>
+            <th><a asp-controller="Payment" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td class="text-info">@payment.Id</td>
+                <td>@payment.PaymentDate.ToString("d")</td>
+                <td>@payment.PaymentSumm</td>
+                <td>@payment.BillID</td>
+                <td>
+                    <div class="w-100 btn-group" role="group">
+                        <a asp-controller="Payment" asp-action="Edit" asp-route-id="@payment.Id" class="btn btn-outline-warning mx-2">Изменить</a>
+                        <a asp-controller="Payment" asp-action="Delete" asp-route-id="@payment.Id" class="btn btn-outline-danger mx-2">Удалить</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

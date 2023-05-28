@@ -1,0 +1,37 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Bill
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Удалить счет</h2>
+            <hr class="border-info" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateStart"></label>
+            <input asp-for="DateStart" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateFinish"></label>
+            <input asp-for="DateFinish" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Summ"></label>
+            <input asp-for="Summ" class="form-control" readonly />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DogovorID"></label>
+            <input asp-for="DogovorID" class="form-control" readonly />
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-info w-100">Удалить</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Bill" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+    </div>
+</form>

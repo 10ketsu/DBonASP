@@ -1,0 +1,58 @@
+﻿@using Bober.Models.DatabaseModels;
+@model Dogovor
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post">
+    <div class="border border-info p-3 mt-4">
+        <div class="pb-2">
+            <h2 class="text-info">Изменение договора</h2>
+            <hr class="border-info" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateStart"></label>
+            <input type="date" asp-for="DateStart" class="form-control" />
+            <span asp-validation-for="DateStart" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateFinish"></label>
+            <input type="date" asp-for="DateFinish" class="form-control" />
+            <span asp-validation-for="DateFinish" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price"></label>
+            <input type="number" asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="SotrID"></label>
+            <select asp-for="SotrID" asp-items="ViewBag.sotrudnikList" class="form-select"></select>
+            <span asp-validation-for="SotrID" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ClientID"></label>
+            <select asp-for="ClientID" asp-items="ViewBag.clientsList" class="form-select"></select>
+            <span asp-validation-for="ClientID" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="FlatID"></label>
+            <select asp-for="FlatID" asp-items="ViewBag.FlatList" class="form-select"></select>
+            <span asp-validation-for="FlatID" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-info w-100">Принять изменения</button>
+            </div>
+            <div class="col">
+                <a asp-controller="Dogovor" asp-action="Index" class="btn btn-secondary w-100">Вернуться к списку</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

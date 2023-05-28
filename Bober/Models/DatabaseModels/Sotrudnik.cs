@@ -14,22 +14,21 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите ФИО сотрудника")]
         public string Fio { get; set; }
 
-        [DisplayName("пол")]
+        [DisplayName("Пол")]
         [Required(ErrorMessage = "Введите пол")]
         public string Pol { get; set; }
 
-        [DisplayName("возраст")]
+        [DisplayName("Возраст")]
         [Required(ErrorMessage = "Введите возраст")]
         public int Age { get; set; }
 
-        //[DisplayName("номер отдела")]
-        //[Required(ErrorMessage = "Введите номер отдела")]
-        //public int OtdelID { get; set; }
-
-        [DisplayName("название отдела")]
+        [DisplayName("Название отдела")]
         [Required(ErrorMessage = "Введите название отдела")]
         public string OtdelName { get; set; }
 
-        //public List<Dogovor> Dogovors { get; set; }
+        public override string ToString()
+        {
+            return $"{Fio}";
+        }
     }
 }

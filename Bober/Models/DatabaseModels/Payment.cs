@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -17,26 +18,11 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите сумму платежа")]
         public decimal PaymentSumm { get; set; }
 
-        [DisplayName("дата оконачания")]
-        [Required(ErrorMessage = "Введите дату окончания")]
-        public DateTime DateFinish { get; set; }
-
-        [DisplayName("сумма платежа")]
-        [Required(ErrorMessage = "Введите сумму платежа")]
-        public decimal BillSumm { get; set; }
-
-        [DisplayName("дата платежа")]
-        [Required(ErrorMessage = "Введите дату платежа")]
-        public DateTime BillDate { get; set; }
-
-        //[DisplayName("номер платежа")]
-        //[Required(ErrorMessage = "Введите номер платежа")]
-        //public string Bill { get; set; }
-
-        [DisplayName("номер платежа")]
-        [Required(ErrorMessage = "Введите номер платежа")]
+        [DisplayName("номер счета")]
+        [Required(ErrorMessage = "Введите номер счета")]
         public int BillID { get; set; }
         [ForeignKey("BillID")]
+        [ValidateNever]
         public Bill Bill { get; set; }
     }
 }

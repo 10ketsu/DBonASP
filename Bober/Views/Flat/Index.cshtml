@@ -1,0 +1,42 @@
+﻿@using Bober.Models.DatabaseModels
+@model IEnumerable<Flat>
+
+@{
+    ViewData["Title"] = "Квартиры";
+}
+
+<h2 class="text-center text-info">Квартира</h2>
+<table class="table table-hover w-100 pt-3">
+    <thead>
+        <tr class="table-dark text-info">
+            <th>Id</th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NumberSortParm"]" class="link link-primary page-link">Номер</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSortParm"]" class="link link-primary page-link">Статус</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["RoomSortParm"]" class="link link-primary page-link">Кол-во комнат</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["SqyareSortParm"]" class="link link-primary page-link">Площадь</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["FlorSortParm"]" class="link link-primary page-link">Этаж</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["BuildingSortParm"]" class="link link-primary page-link">Здание</a></th>
+            <th><a asp-controller="Flat" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var flat in Model)
+        {
+            <tr>
+                <td class="text-info">@flat.Id</td>
+                <td>@flat.FlatNumber</td>
+                <td>@flat.Status</td>
+                <td>@flat.RoomNumber</td>
+                <td>@flat.Sqyare</td>
+                <td>@flat.Flor</td>
+                <td>@flat.Building</td>
+                <td>
+                    <div class="w-100 btn-group" role="group">
+                        <a asp-controller="Flat" asp-action="Edit" asp-route-id="@flat.Id" class="btn btn-outline-warning mx-2">Изменить</a>
+                        <a asp-controller="Flat" asp-action="Delete" asp-route-id="@flat.Id" class="btn btn-outline-danger mx-2">Удалить</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
