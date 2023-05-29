@@ -8,11 +8,17 @@ namespace Bober.Controllers
         public readonly BogbanContext _db;
         public DistrictController(BogbanContext db) => _db = db;
 
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder, string searchString)
         {
-            List<District> districtsList = _db.District.ToList();
-            return View(districtsList);
+            var district = _db.District.AsQueryable();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                district = district.Where(a => a.Name.Contains(searchString) || a.Location.Contains(searchString));
+            }
+            return View(district);
         }
+
 
         public IActionResult Add()
         {

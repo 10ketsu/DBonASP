@@ -9,181 +9,181 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Bober
 build_property.RootNamespace = Bober
-build_property.ProjectDir = D:\GitHub\DBonASP\Bober\
+build_property.ProjectDir = C:\Users\Bogdan\source\repos\Bober\Bober\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\GitHub\DBonASP\Bober
+build_property.MSBuildProjectDirectory = C:\Users\Bogdan\source\repos\Bober\Bober
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/GitHub/DBonASP/Bober/Views/Bill/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Bill/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Bill/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Bill/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Bill/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Bill/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Bill/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Bill/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Building/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Building/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Building/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Building/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Building/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRpbmdcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Client/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Client/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Client/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Client/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Client/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Client/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Client/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Client/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/District/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/District/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/District/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/District/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/District/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/District/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/District/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/District/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpY3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Dogovor/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Dogovor/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nb3ZvclxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Dogovor/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Dogovor/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nb3ZvclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Dogovor/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Dogovor/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nb3ZvclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Dogovor/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Dogovor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nb3ZvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Flat/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Flat/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxhdFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Flat/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Flat/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxhdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Flat/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Flat/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxhdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Flat/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Flat/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxhdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Home/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Home/Privacy.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Payment/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Payment/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Payment/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Payment/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Payment/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Payment/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Payment/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Payment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Shared/Error.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Sotrudnik/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Sotrudnik/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU290cnVkbmlrXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Sotrudnik/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Sotrudnik/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU290cnVkbmlrXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Sotrudnik/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Sotrudnik/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU290cnVkbmlrXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Sotrudnik/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Sotrudnik/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU290cnVkbmlrXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Zastr/Add.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Zastr/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFzdHJcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Zastr/Delete.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Zastr/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFzdHJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Zastr/Edit.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Zastr/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFzdHJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Zastr/Index.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Zastr/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFzdHJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/_ViewImports.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/_ViewStart.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GitHub/DBonASP/Bober/Views/Shared/_Layout.cshtml]
+[C:/Users/Bogdan/source/repos/Bober/Bober/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-05lnv871bn
