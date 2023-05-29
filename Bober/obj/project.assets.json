@@ -10517,11 +10517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\DBonASP\\Bober\\Bober.csproj",
+      "projectUniqueName": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\Bober.csproj",
       "projectName": "Bober",
-      "projectPath": "D:\\GitHub\\DBonASP\\Bober\\Bober.csproj",
+      "projectPath": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\Bober.csproj",
       "packagesPath": "C:\\Users\\Bogdan\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\DBonASP\\Bober\\obj\\",
+      "outputPath": "C:\\Users\\Bogdan\\source\\repos\\Bober\\Bober\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

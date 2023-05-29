@@ -20,7 +20,6 @@ namespace Bober.Controllers
                 client = client.Where(a => a.Passport.Contains(searchString) || a.Sex.Contains(searchString) || a.Phone.Contains(searchString));
             }
 
-
             switch (sortOrder)
             {
                 case "peace_des":

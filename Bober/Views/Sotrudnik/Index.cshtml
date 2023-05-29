@@ -10,10 +10,10 @@
     <thead>
         <tr class="table-dark text-info">
             <th>ID</th>
-            <th>ФИО</th>
-            <th>пол</th>
-            <th>Возраст</th>
-            <th>Отдел</th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["FioSortParm"]" class="link link-primary page-link">ФИО</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["PolSortParm"]" class="link link-primary page-link">Пол</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["AgeSortParm"]" class="link link-primary page-link">Возраст</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["OtdelSortParm"]" class="link link-primary page-link">Отдел</a></th>
             <th><a asp-controller="Sotrudnik" asp-action="Add" class="btn btn-info w-100 h-75">Добавить</a></th>
         </tr>
     </thead>

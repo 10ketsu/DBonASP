@@ -8,10 +8,47 @@ namespace Bober.Controllers
         public readonly BogbanContext _db;
         public SotrudnikController(BogbanContext db) => _db = db;
 
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder, string searchString)
         {
-            List<Sotrudnik> sotrudnikList = _db.Sotrudnik.ToList();
-            return View(sotrudnikList);
+            ViewData["FioSortParm"] = String.IsNullOrEmpty(sortOrder) ? "fio_des" : "";
+            ViewData["AgeSortParm"] = sortOrder == "Age" ? "age_desc" : "Age";
+            ViewData["PolSortParm"] = sortOrder == "Pol" ? "pol_desc" : "Pol";
+            ViewData["OtdelSortParm"] = sortOrder == "Otdel" ? "otdel_desc" : "Otdel";
+            var sotrudnik = _db.Sotrudnik.AsQueryable();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                sotrudnik = sotrudnik.Where(a => a.Fio.Contains(searchString) || a.Pol.Contains(searchString) || a.Age.ToString().Contains(searchString) || a.OtdelName.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "fio_des":
+                    sotrudnik = sotrudnik.OrderByDescending(a => a.Fio);
+                    break;
+                case "Age":
+                    sotrudnik = sotrudnik.OrderBy(s => s.Age);
+                    break;
+                case "age_desc":
+                    sotrudnik = sotrudnik.OrderByDescending(s => s.Age);
+                    break;
+                case "Otdel":
+                    sotrudnik = sotrudnik.OrderBy(s => s.OtdelName);
+                    break;
+                case "otdel_desc":
+                    sotrudnik = sotrudnik.OrderByDescending(s => s.OtdelName);
+                    break;
+                case "Pol":
+                    sotrudnik = sotrudnik.OrderBy(s => s.Pol);
+                    break;
+                case "pol_desc":
+                    sotrudnik = sotrudnik.OrderByDescending(s => s.Pol);
+                    break;
+                default:
+                    sotrudnik = sotrudnik.OrderBy(a => a.Fio);
+                    break;
+            }
+            return View(sotrudnik.ToList());
         }
 
         public IActionResult Add()
