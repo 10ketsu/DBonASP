@@ -18,7 +18,8 @@ namespace Bober.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                sotrudnik = sotrudnik.Where(a => a.Fio.Contains(searchString) || a.Pol.Contains(searchString) || a.Age.ToString().Contains(searchString) || a.OtdelName.Contains(searchString));
+                sotrudnik = sotrudnik.Where(a => a.Fio.Contains(searchString) || a.Pol.Contains(searchString) || 
+                a.Age.ToString().Contains(searchString) || a.OtdelName.Contains(searchString));
             }
 
             switch (sortOrder)

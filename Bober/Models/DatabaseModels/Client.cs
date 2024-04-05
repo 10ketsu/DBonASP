@@ -26,7 +26,5 @@ namespace Bober.Models.DatabaseModels
         [Required(ErrorMessage = "Введите номер телефона")]
         [StringLength(11, ErrorMessage = "Длинна номера не может быть более {1} символов")]
         public string Phone { get; set; }
-
-        //public List<Dogovor> Dogovors { get; set; }
     }
 }
