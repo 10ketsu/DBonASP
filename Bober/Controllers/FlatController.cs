@@ -59,7 +59,7 @@ namespace Bober.Controllers
                     flat = flat.OrderBy(s => s.Building.Name).ThenBy(s => s.Id);
                     break;
                 case "building_desc":
-                    flat = flat.OrderBy(s => s.Building.Name).ThenBy(s => s.Id);
+                    flat = flat.OrderByDescending(s => s.Building.Name).ThenBy(s => s.Id);
                     break;
                 default:
                     flat = flat.OrderBy(a => a.FlatNumber);

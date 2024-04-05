@@ -22,7 +22,8 @@ namespace Bober.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                bill = bill.Where(a => a.DateStart.ToString().Contains(searchString) || a.DateFinish.ToString().Contains(searchString) || a.Summ.ToString().Contains(searchString) || a.Dogovor.Id.ToString().Contains(searchString));
+                bill = bill.Where(a => a.DateStart.ToString().Contains(searchString) || a.DateFinish.ToString().Contains(searchString) || 
+                a.Summ.ToString().Contains(searchString) || a.Dogovor.Id.ToString().Contains(searchString));
             }
 
             switch (sortOrder)
